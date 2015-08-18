@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
   
   def index
-    @contacts = Contact.all.order('last_name ASC')
+    @contacts = Contact.all.sort_by { |a| [a.last_name, a.first_name ]}
   end
   
   def new

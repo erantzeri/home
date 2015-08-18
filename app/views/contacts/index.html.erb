@@ -1,9 +1,7 @@
+<div id="page_wrapper">
 
-
-<% @contacts.each do |contact| %>
-	<div class ="post_wrapper">
+	<% @contacts.each do |contact| %>	
 		<p><%= link_to contact.first_name, contact %>&nbsp;<%= contact.last_name %></p>
-	</div>	
-	
-<% end %>
+	<% end %>
 
+</div>
