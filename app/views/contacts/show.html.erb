@@ -8,11 +8,19 @@
 	| <%= link_to 'Delete', contact_path(@contact), method: :delete, data: {confirm: 'Are You Sure?'} %>
 </p>	
 
-<h2>SO: </h2>
-<%= @contact.significant_other %>
-<h2>Children: </h2>
-<%= @contact.children %>
-<h2>Birthdate: </h2>
-<%= @contact.bday %>
+<% if @contact.significant_other? %>
+	<h2>SO: </h2>
+	<%= @contact.significant_other %>
+<% end %>
+
+<% if @contact.children? %>	
+	<h2>Children: </h2>
+	<%= @contact.children %>
+<% end %>	
+
+<% if @contact.bday? %>	
+	<h2>Birthdate: </h2>
+	<%= @contact.bday %>
+<% end %>	
 
 </div>
