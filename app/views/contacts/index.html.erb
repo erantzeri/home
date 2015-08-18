@@ -1,0 +1,9 @@
+
+
+<% @contacts.each do |contact| %>
+	<div class ="post_wrapper">
+		<p><%= link_to contact.first_name, contact %>&nbsp;<%= contact.last_name %></p>
+	</div>	
+	
+<% end %>
+
