@@ -28,7 +28,7 @@ class ContactsController < ApplicationController
   
   def update
     @contact = Contact.find(params[:id])
-    if @contact.update(params[:contact].permit(:first_name, :last_name, :children, :significant_other, :bday))
+    if @contact.update(params[:contact].permit(:first_name, :last_name, :children, :significant_other, :bday, :email))
       redirect_to @contact
     else
       render 'edit'

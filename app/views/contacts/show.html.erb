@@ -8,6 +8,11 @@
 	| <%= link_to 'Delete', contact_path(@contact), method: :delete, data: {confirm: 'Are You Sure?'} %>
 </p>	
 
+<% if @contact.email? %>
+	<h2>Personal Email: <%= @contact.email %></h2>
+	
+<% end %>
+
 <% if @contact.significant_other? %>
 	<h2>SO: </h2>
 	<%= @contact.significant_other %>
