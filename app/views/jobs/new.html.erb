@@ -1,0 +1,14 @@
+<div id="page_wrapper">
+	
+	<p>
+		<%= form_for :job, url: jobs_path do |f| %>
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+		</p>
+	
+		<p><%= f.submit %></p>
+	
+	<% end %>
+	
+	
+</div>	

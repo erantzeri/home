@@ -1,0 +1,11 @@
+
+
+	<%= form_for ([@contact, @contact.jobs.build]) do |f| %>
+
+		<%= f.label :title %>
+		<p><%= f.text_field :title %></p>
+		
+		<p><%= f.submit %></p>
+	
+	<% end %>
+

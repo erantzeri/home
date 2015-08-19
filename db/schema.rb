@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819022052) do
+ActiveRecord::Schema.define(version: 20150819182802) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 20150819022052) do
     t.date     "bday"
     t.string   "email",             limit: 255
   end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.integer  "contact_id", limit: 4
+    t.integer  "company_id", limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "jobs", ["company_id"], name: "index_jobs_on_company_id", using: :btree
+  add_index "jobs", ["contact_id"], name: "index_jobs_on_contact_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -55,4 +66,6 @@ ActiveRecord::Schema.define(version: 20150819022052) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "jobs", "companies"
+  add_foreign_key "jobs", "contacts"
 end

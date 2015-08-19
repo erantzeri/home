@@ -2,6 +2,7 @@
 
 <h1><%= @contact.first_name %>&nbsp;<%= @contact.last_name %></h1>
 
+
 <p class="date">
 	Added On <%= @contact.created_at.strftime("%b %d '%y") %>
 	| <%= link_to 'Edit', edit_contact_path(@contact) %>
@@ -27,5 +28,10 @@
 	<h2>Birthdate: </h2>
 	<%= @contact.bday %>
 <% end %>	
+
+<div id="comments">
+    <h3>Add a Job:</h3>
+    <%= render "jobs/form" %>
+  </div>
 
 </div>
