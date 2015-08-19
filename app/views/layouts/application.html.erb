@@ -21,6 +21,7 @@
 			<li><%= link_to 'Blog', root_path %></li>
 			<% if user_signed_in? %>
 				<li><%= link_to 'Contacts', contacts_path %></li>
+				<li><%= link_to 'Companies', companies_path %></li>
 			<% end %>
 			<li><%= link_to 'About', about_path %></li>
 		
@@ -48,6 +49,9 @@
 				<p>About</p>
 			<% elsif current_page?(contacts_path) %>
 				<p>Contacts</p>	
+			
+			<% elsif current_page?(companies_path) %>
+				<p>Companies</p>	
 			<% else %>
 				<%= link_to "Back to All Posts", root_path %>
 			<% end %>
@@ -56,6 +60,8 @@
 				<div class="buttons">
 					<% if current_page?(contacts_path) %>
 						<button class="button"><%= link_to("New Contact", new_contact_path) %></button>
+					<% elsif current_page?(companies_path) %>
+						<button class="button"><%= link_to("New Company", new_company_path) %></button>
 					<% else %>
 						<button class="button"><%= link_to("New Post", new_post_path) %></button>
 					<% end %>	
