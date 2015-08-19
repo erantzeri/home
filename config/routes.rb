@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  resources :posts
-  resources :contacts
+  resources :posts, :contacts, :companies
   
   root "posts#index"
   
