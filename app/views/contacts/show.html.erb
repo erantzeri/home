@@ -2,12 +2,18 @@
 
 <h1><%= @contact.first_name %>&nbsp;<%= @contact.last_name %></h1>
 
-
 <p class="date">
 	Added On <%= @contact.created_at.strftime("%b %d '%y") %>
 	| <%= link_to 'Edit', edit_contact_path(@contact) %>
 	| <%= link_to 'Delete', contact_path(@contact), method: :delete, data: {confirm: 'Are You Sure?'} %>
 </p>	
+
+<h2>Jobs: </h2>
+	<% @jobs.each do |job| %>
+		<p><%= job.title %></p>
+	<% end %>
+
+
 
 <% if @contact.email? %>
 	<h2>Personal Email: <%= @contact.email %></h2>

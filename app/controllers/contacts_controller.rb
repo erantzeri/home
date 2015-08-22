@@ -20,6 +20,7 @@ class ContactsController < ApplicationController
   
   def show
     @contact = Contact.find(params[:id])
+    @jobs = @contact.jobs
   end
   
   def edit
