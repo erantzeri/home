@@ -9,7 +9,7 @@ class JobsController < ApplicationController
 
   def create
     @contact = Contact.find(params[:contact_id])
-    @job = @contact.jobs.create(params[:job].permit(:title))
+    @job = @contact.jobs.create(job_params)
     
     redirect_to contact_path(@contact)
   end
@@ -22,7 +22,7 @@ class JobsController < ApplicationController
   private
     
   def job_params
-    params.require(:job).permit(:title, :contact, :company)
+    params.require(:job).permit(:title, :contact_id, :company_id)
   end
 
 end
