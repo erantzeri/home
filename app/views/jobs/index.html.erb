@@ -1,7 +1,10 @@
 <div id="page_wrapper">
 
 	<% @jobs.each do |job| %>
-		<p><%= job.title%></p>
+		<p><%= link_to job.title, job %>
+		| <%= job.contact.first_name %>&nbsp; <%= job.contact.last_name %>
+		| <%= job.company.name %>
+		</p>
 	<% end %>	
 
 </div>

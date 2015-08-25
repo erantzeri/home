@@ -10,7 +10,7 @@
 
 <h2>Jobs: </h2>
 	<% @jobs.each do |job| %>
-		<p><%= job.title %></p>
+		<p><%= link_to job.title, job %> at <%= job.company.name %></p>
 	<% end %>
 
 
